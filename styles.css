@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: black;
+    --secondary-color: #ff8c00;
+    --button-color: #f1c40f;
+    --button-hover-color: orange;
+    --primary-bg-color: #eee;
+    --secondary-bg-color: #ddd;
+}
+
+body{
+    background-color: var(--primary-bg-color);
+    line-height: 25px;
+}
+
+/********Header CSS*********/
+
+.header-container{
+    position: relative;
+    width: 100%;
+    height: 55px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: inherit;
+    max-width: inherit;
+    height: 55px;
+    background-color: var(--secondary-bg-color);
+}
+
+.logo{
+    flex-basis: 60%;
+}
+
+.logo img{
+    width: 300px;
+}
+
+.nav-bar{
+    flex-basis: 40%;
+}
+
+.header ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header ul li{
+    display: inline-block;
+}
+
+.header ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.header .menu{
+    width: 40px;
+    display: none;
+}
+
+/***********Main Body CSS***********/
+
+.main-container{
+    margin-top: 15px;
+}
+
+.main{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.section1 form{
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.section1{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.section1 input[type="email"]{
+    display: block;
+    margin: 20px 0 10px;
+    padding: 6px 5px;
+    width: 230px;
+}
+
+.section1 input[type="submit"]{
+    display: block;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--button-color);
+}
+
+.section1 input[type="submit"]:hover{
+    background-color: var(--button-hover-color);
+}
+
+.section2{
+    margin: 70px 0 30px 0;
+}
+.section2 .icon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.icon svg{
+    width: 50px;
+    height: 50px;
+    fill: var(--secondary-color);
+    flex-basis: 18%;
+}
+
+.icon .text{
+    flex-basis: 82%;
+}
+
+.text p{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.section3{
+    margin-bottom: 25px;
+}
+
+.section3 iframe{
+    width: 560px;
+    height: 315px;
+}
+
+.section4{
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+
+.section4 .box{
+    border: 1px solid var(--primary-color);
+}
+
+.box{
+    width: 260px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.box h3{
+    background-color: var(--secondary-bg-color);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.box h1{
+    margin: 15px 0;
+}
+
+.box p{
+    font-size: 18px;
+}
+
+.box button{
+    padding: 8px 25px;
+    margin: 15px 0;
+    background-color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.box button:hover{
+    background-color: var(--button-hover-color);
+}
+
+/**************Footer CSS************/
+
+.footer-container{
+    background-color: var(--secondary-bg-color);
+}
+
+.footer{
+    padding: 15px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.footer ul{
+    list-style: none;
+    display: flex;
+}
+
+.footer ul li{
+    display: inline-block;
+    padding: 0  10px;
+}
+
+.footer ul li a{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+/***********Mobile CSS************/
+
+@media only screen and (max-width:430px){
+    .nav-bar{
+        position: absolute;
+        right: -999px;
+        top: 55px;
+        height: 100vh;
+        background-color: var(--secondary-bg-color);
+        transition: .5s ease;
+    }
+
+    .active{
+        right: 0;
+    }
+
+    .logo img{
+        width: 170px;
+        
+    }
+
+    .header .menu{
+        display: inline-block;
+        cursor: pointer;
+        transition: display 0.5s;
+    }
+
+    .header{
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .header ul{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 50vw;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .header ul li{
+        padding: 10px;
+        border-bottom: 1px solid var(--primary-bg-color);
+        width: 100%;
+        text-align: right;
+    }
+
+    .main-container{
+        padding: 10px;
+    }
+
+    .section1 h1{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .section2 .icon{
+        flex-flow: wrap column;
+        text-align: center;
+    }
+
+    .icon svg{
+        margin-bottom: 12px;
+    }
+
+    .section3 iframe{
+        width: 100%;
+        height: auto;
+    }
+    
+    .section4{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footer{
+        align-items: center;
+    }
+
+}
